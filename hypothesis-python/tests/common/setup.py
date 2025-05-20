@@ -28,13 +28,6 @@ def run():
     filterwarnings("ignore", category=ImportWarning)
     filterwarnings("ignore", category=FutureWarning, module="pandas._version")
 
-    # new warning from Redis 6.0, when calling `FakeRedis()`
-    filterwarnings(
-        "ignore",
-        "Call to '__init__' function with deprecated usage of input argument/s 'retry_on_timeout'",
-        category=DeprecationWarning,
-    )
-
     # See https://github.com/numpy/numpy/pull/432; still a thing as of 2022.
     filterwarnings("ignore", message="numpy.dtype size changed")
     filterwarnings("ignore", message="numpy.ufunc size changed")
