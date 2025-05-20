@@ -20,6 +20,12 @@ from hypothesis.extra.redis import RedisExampleDatabase
 from hypothesis.stateful import Bundle, RuleBasedStateMachine, rule
 
 from tests.cover.test_database_backend import _database_conforms_to_listener_api
+from warnings import filterwarnings
+filterwarnings(
+    "ignore",
+    ".*Call to '__init__' function with deprecated usage of input argument/s 'retry_on_timeout'.*",
+    category=DeprecationWarning,
+)
 
 
 @pytest.mark.parametrize(
