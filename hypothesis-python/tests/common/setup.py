@@ -27,6 +27,7 @@ def run():
     filterwarnings("error")
     filterwarnings("ignore", category=ImportWarning)
     filterwarnings("ignore", category=FutureWarning, module="pandas._version")
+    filterwarnings("ignore", category=DeprecationWarning, module="fakeredis._connection")
 
     # See https://github.com/numpy/numpy/pull/432; still a thing as of 2022.
     filterwarnings("ignore", message="numpy.dtype size changed")
