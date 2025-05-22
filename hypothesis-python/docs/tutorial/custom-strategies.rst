@@ -23,7 +23,7 @@ Writing your own strategy
 
 If a strategy in Hypothesis doesn't match what you need, you can write your own strategy.
 
-For instance, suppose we want to generate a list of floats which sum to ``1``. We might start implementing this by generating lists of integers between 0 and 1 with ``lists(floats(0, 1))``. But now we're a bit stuck, and can't go any further with the standard strategies.
+For instance, suppose we want to generate a list of floats which sum to ``1``. We might start implementing this by generating lists of floats between 0 and 1 with ``lists(floats(0, 1))``. But now we're a bit stuck, and can't go any further with the standard strategies.
 
 One way to define a new strategy is using the |st.composite| decorator. |st.composite| lets you define a new strategy that uses arbitrary Python code. For instance, to implement the above:
 
